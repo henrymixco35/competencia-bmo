@@ -28,7 +28,7 @@ h1{margin:0;font-size:1.7rem;font-weight:900}
 .chip{border:1px solid var(--line);background:#fff;border-radius:4px;padding:5px 12px;font:inherit;font-size:.88rem;cursor:pointer}
 .chip[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
 .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
-table{width:100%;border-collapse:collapse;min-width:720px}
+table{width:100%;border-collapse:collapse}
 th{background:var(--head);text-align:left;font-weight:700;padding:10px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 td{padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 tr:last-child td{border-bottom:0}
@@ -39,27 +39,21 @@ tr.podium:hover{background:#d9f0dd}
 .pos{font-weight:900;width:44px}
 .name{font-weight:700}
 .lob{color:var(--mute);font-size:.9rem}
-.drop{color:var(--mute)}
 .strong{font-weight:900}
 .rec{display:inline-block;background:var(--green);color:#fff;font-size:.66rem;font-weight:900;border-radius:3px;padding:0 5px;margin-left:5px;vertical-align:middle}
 .empty{padding:26px;text-align:center;color:var(--mute)}
-/* Podio */
 .pod{display:grid;gap:8px;margin-bottom:22px}
 .pod .p{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-left-width:8px;border-radius:4px;padding:10px 14px}
 .pod .p.g1{border-left-color:var(--gold)}.pod .p.g2{border-left-color:var(--silver)}.pod .p.g3{border-left-color:var(--bronze)}
 .pod .n{font-size:1.6rem;font-weight:900;width:30px}
 .pod .who{flex:1}.pod .who b{font-size:1.05rem}
 .pod .t{font-size:1.4rem;font-weight:900;text-align:right}
-.pod .t small{display:block;font-size:.72rem;color:var(--mute);font-weight:400}
-/* Formulario */
 .grid{display:grid;gap:22px}
 @media(min-width:900px){.grid{grid-template-columns:360px 1fr;align-items:start}}
 form{display:grid;gap:14px;border:1px solid var(--line);border-radius:4px;padding:18px}
 label{display:block;font-weight:700;font-size:.85rem;margin-bottom:4px}
 input,select{width:100%;padding:9px 11px;border:1px solid rgba(34,36,38,.25);border-radius:4px;font:inherit;background:#fff;color:var(--ink)}
 input:focus,select:focus,button:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
-.att{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.att input{text-align:right;font-variant-numeric:tabular-nums;padding:9px 8px}
 .hint{font-size:.8rem;color:var(--mute);margin:0}
 .btn{font:inherit;font-weight:700;border:0;border-radius:4px;padding:10px 16px;cursor:pointer;background:#e0e1e2;color:rgba(0,0,0,.6)}
 .btn.blue{background:var(--blue);color:#fff}.btn.blue:hover{background:#1678c2}
@@ -67,23 +61,16 @@ input:focus,select:focus,button:focus-visible{outline:2px solid var(--blue);outl
 .btn.sm{padding:4px 10px;font-size:.82rem}
 .row{display:flex;gap:8px;flex-wrap:wrap}
 [hidden]{display:none!important}
-
 nav em{margin-left:auto;font-style:normal;font-size:.82rem;color:#bbb;white-space:nowrap}
 nav em::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#999;margin-right:6px}
 nav em.ok::before{background:var(--green)}nav em.err::before{background:var(--red)}
-/* ---- Intentos ---- */
-.att{grid-template-columns:1fr;gap:8px}
-.att .ar{display:grid;grid-template-columns:78px 1fr 64px;gap:8px;align-items:center}
-.att label{margin:0}
-.att input{font-size:1.2rem;text-align:right}
+.ar{display:grid;grid-template-columns:1fr 70px;gap:8px;align-items:center}
+.ar input{font-size:1.6rem;text-align:right;font-variant-numeric:tabular-nums}
 .btn.dnf{padding:10px 0}
-.tl{min-width:420px}.tt{min-width:480px}
 html{-webkit-text-size-adjust:100%}
 nav .in{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
 .wrap{padding-bottom:max(60px,env(safe-area-inset-bottom))}
 button{touch-action:manipulation}
-
-/* ---- Teléfono ---- */
 @media(max-width:640px){
   body{font-size:16px}
   nav span{display:none}
@@ -92,36 +79,14 @@ button{touch-action:manipulation}
   .sub{font-size:.9rem}
   .menu{overflow:visible}
   .menu button{flex:1;padding:13px 4px;font-size:.95rem}
-  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
   .chip{white-space:nowrap;padding:9px 14px;font-size:.92rem}
   input,select{font-size:16px;min-height:46px}
+  .ar input{font-size:1.6rem}
   .btn{min-height:44px}
   .btn.sm{min-height:40px;padding:6px 12px}
   form{padding:14px}
-  .pod .n{font-size:1.4rem}
-  .pod .t{font-size:1.25rem}
-  /* resultados como tarjetas */
-  #v-res .scroll{border:0;overflow:visible}
-  #v-res table{min-width:0;display:block}
-  #v-res thead{display:none}
-  #v-res tbody{display:grid;gap:10px}
-  #v-res tr{display:grid;grid-template-columns:34px repeat(5,1fr);column-gap:4px;border:1px solid var(--line);border-radius:6px;padding:10px;background:#fff}
-  #v-res tr.podium{background:var(--row-green)}
-  #v-res td{border:0;padding:2px 0;white-space:normal}
-  #v-res td[data-l]::before{content:attr(data-l);display:block;font-size:.68rem;font-weight:400;color:var(--mute)}
-  #v-res td.pos{grid-column:1;grid-row:1/3;font-size:1.4rem;align-self:center;width:auto}
-  #v-res td.name{grid-column:2/-1;grid-row:1;font-size:1.05rem}
-  #v-res td.lob{grid-column:2/-1;grid-row:2}
-  #v-res td.at{grid-row:3;text-align:center;margin-top:8px;font-size:.95rem}
-  #v-res td:nth-child(4){grid-column:2}#v-res td:nth-child(5){grid-column:3}#v-res td:nth-child(6){grid-column:4}
-  #v-res td:nth-child(7){grid-column:5}#v-res td:nth-child(8){grid-column:6}
-  #v-res td.bst{grid-column:1/4;grid-row:4;text-align:left;margin-top:8px;font-size:1.2rem}
-  #v-res td.av{grid-column:4/7;grid-row:4;text-align:right;margin-top:8px;font-size:1.2rem}
-  #rkEmpty{border:1px solid var(--line);border-radius:6px}
-  /* listas */
-  .tl,.tt{min-width:0}
   th,td{padding:9px 6px}
-  th{white-space:normal}
   td{white-space:normal}
   .tl td:last-child{white-space:nowrap}
 }
@@ -131,8 +96,8 @@ button{touch-action:manipulation}
 <nav><div class="in"><b>Cubing Live</b><span>TELUS · Bank of Montreal</span><em id="status"></em></div></nav>
 
 <div class="wrap">
-  <h1>Competencia 3x3 · Final</h1>
-  <p class="sub">Promedio de 5 (se elimina el mejor y el peor tiempo) · Resultados en vivo</p>
+  <h1>Competencia 3x3</h1>
+  <p class="sub">Un solo tiempo por persona · Resultados en vivo</p>
 
   <div class="menu" role="tablist">
     <button role="tab" id="tab-res" aria-selected="true">Resultados</button>
@@ -140,17 +105,15 @@ button{touch-action:manipulation}
     <button role="tab" id="tab-lob" aria-selected="false">Por LOB</button>
   </div>
 
-  <!-- RESULTADOS -->
   <section id="v-res">
     <div id="podium" class="pod"></div>
     <div id="chips" class="chips"></div>
     <div class="scroll"><table>
-      <thead><tr><th>#</th><th>Nombre</th><th>LOB</th><th class="r">1</th><th class="r">2</th><th class="r">3</th><th class="r">4</th><th class="r">5</th><th class="r">Mejor</th><th class="r">Promedio</th></tr></thead>
+      <thead><tr><th>#</th><th>Nombre</th><th>LOB</th><th class="r">Tiempo</th></tr></thead>
       <tbody id="rows"></tbody>
     </table><div id="rkEmpty" class="empty">Aún no hay resultados. Ve a "Capturar tiempos".</div></div>
   </section>
 
-  <!-- CAPTURA -->
   <section id="v-ent" hidden>
     <div class="grid">
       <form id="form" autocomplete="off">
@@ -167,13 +130,8 @@ button{touch-action:manipulation}
         </div>
         <div id="otherBox" hidden><label for="otherLob">¿Cuál LOB?</label><input id="otherLob" placeholder="Escribe el nombre del LOB"></div>
         <div>
-          <div class="att">
-            <div class="ar"><label for="a0">Intento 1</label><input class="a" id="a0" inputmode="numeric" placeholder="0.00"><button type="button" class="btn dnf" data-i="0">DNF</button></div>
-            <div class="ar"><label for="a1">Intento 2</label><input class="a" id="a1" inputmode="numeric" placeholder="0.00"><button type="button" class="btn dnf" data-i="1">DNF</button></div>
-            <div class="ar"><label for="a2">Intento 3</label><input class="a" id="a2" inputmode="numeric" placeholder="0.00"><button type="button" class="btn dnf" data-i="2">DNF</button></div>
-            <div class="ar"><label for="a3">Intento 4</label><input class="a" id="a3" inputmode="numeric" placeholder="0.00"><button type="button" class="btn dnf" data-i="3">DNF</button></div>
-            <div class="ar"><label for="a4">Intento 5</label><input class="a" id="a4" inputmode="numeric" placeholder="0.00"><button type="button" class="btn dnf" data-i="4">DNF</button></div>
-          </div>
+          <label for="a0">Tiempo</label>
+          <div class="ar"><input class="a" id="a0" inputmode="numeric" placeholder="0.00"><button type="button" class="btn dnf" id="dnf">DNF</button></div>
         </div>
         <p class="hint">Escribe solo números: 1234 = 12.34 · 10520 = 1:05.20. Si no resolvió, toca DNF (otra vez para quitarlo).</p>
         <div class="row">
@@ -197,17 +155,15 @@ button{touch-action:manipulation}
     </div>
   </section>
 
-  <!-- POR LOB -->
   <section id="v-lob" hidden>
     <div class="scroll"><table class="tt">
-      <thead><tr><th>#</th><th>LOB</th><th class="r">Competidores</th><th class="r">Media de promedios</th><th class="r">Mejor promedio</th></tr></thead>
+      <thead><tr><th>#</th><th>LOB</th><th class="r">Competidores</th><th class="r">Media de tiempos</th><th class="r">Mejor tiempo</th></tr></thead>
       <tbody id="teams"></tbody>
     </table><div id="teamsEmpty" class="empty">Sin datos todavía.</div></div>
   </section>
 </div>
 
 <script type="module">
-/* ====== CONFIGURACIÓN DE FIREBASE: pega aquí tus datos ====== */
 const FIREBASE_CONFIG={
   apiKey:"AIzaSyAE4ASuLp-20sqGGlD3SzwTy9K0jgE9Tgc",
   authDomain:"competencia-bmo.firebaseapp.com",
@@ -215,21 +171,22 @@ const FIREBASE_CONFIG={
   projectId:"competencia-bmo",
   appId:"1:987100864377:web:16a3e105465b97a6e7d9a8"
 };
-/* ============================================================= */
-const KEY='telus-cubos-v2', OLD='telus-cubos-v1';
+const KEY='telus-cubos-v3', OLD='telus-cubos-v2';
 const STD=['Everyday Banking','Credit Cards','Dispute'];
+// Normaliza registros viejos (times[5]) al nuevo formato (time)
+const norm=p=>({id:p.id,name:p.name||'',lob:p.lob||'',time:p.time!=null?p.time:((p.times&&p.times[0])||'')});
 let people=[], filter='';
 try{
-  people=JSON.parse(localStorage.getItem(KEY));
-  if(!people){people=(JSON.parse(localStorage.getItem(OLD))||[]).map(p=>({id:p.id,name:p.name,lob:p.olb,times:p.times}))}
+  people=JSON.parse(localStorage.getItem(KEY))||JSON.parse(localStorage.getItem(OLD))||[];
 }catch(e){people=[]}
 if(!Array.isArray(people))people=[];
+people=people.map(norm);
 const $=id=>document.getElementById(id);
 const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(people))}catch(e){}};
 const CLOUD=/^https:\/\//.test(FIREBASE_CONFIG.databaseURL||'');
 const PATH='competencia/personas';
 let fb=null;
-function setStatus(txt,cls){const e=document.getElementById('status');e.textContent=txt;e.className=cls||''}
+function setStatus(txt,cls){const e=$('status');e.textContent=txt;e.className=cls||''}
 const newId=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 function fail(err){console.error(err);setStatus('Error al guardar','err');alert('No se pudo guardar en la base de datos. Revisa tu conexión y las reglas de Firebase.')}
 function savePerson(p){
@@ -245,7 +202,7 @@ function clearAll(){
   people=[];persist();render();
 }
 function replaceAll(arr){
-  arr.forEach(p=>{if(!p.id)p.id=newId()});
+  arr=arr.map(p=>{const n=norm(p);if(!n.id)n.id=newId();return n});
   if(CLOUD&&fb){fb.set(fb.ref(fb.db,PATH),Object.fromEntries(arr.map(p=>[p.id,p]))).catch(fail);return}
   people=arr;persist();render();
 }
@@ -260,15 +217,14 @@ async function initCloud(){
     D.onValue(D.ref(db,'.info/connected'),s=>setStatus(s.val()?'En línea':'Sin conexión',s.val()?'ok':'err'));
     D.onValue(D.ref(db,PATH),snap=>{
       const v=snap.val()||{};
-      people=Object.values(v).map(p=>({id:p.id,name:p.name||'',lob:p.lob||'',times:[0,1,2,3,4].map(i=>(p.times&&p.times[i])||'')}))
-        .sort((a,b)=>a.id<b.id?-1:1);
+      people=Object.values(v).map(norm).sort((a,b)=>a.id<b.id?-1:1);
       render();
     },err=>{console.error(err);setStatus('Sin permiso','err')});
   }catch(e){console.error(e);setStatus('No se pudo conectar','err')}
 }
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-/* ---- Tiempos ---- */
+/* ---- Tiempos (en centésimas) ---- */
 function parse(s){
   s=String(s||'').trim().toUpperCase().replace(',','.');
   if(!s)return null;
@@ -283,70 +239,49 @@ function fmt(cs){
   const m=Math.floor(cs/6000),s=(cs%6000)/100;
   return m?`${m}:${s.toFixed(2).padStart(5,'0')}`:s.toFixed(2);
 }
-// Captura estilo WCA Live: solo dígitos, se llenan desde la derecha
+// Captura estilo WCA Live: los dígitos se llenan desde la derecha (cc, ss, mm)
 function maskAttempt(v){
   if(/d/i.test(v))return v.length===1||v.toUpperCase()==='DNF'?'DNF':'';
   let d=v.replace(/\D/g,'').replace(/^0+/,'').slice(0,6);
   if(!d)return '';
-  return fmt(parseInt(d,10));
+  d=d.padStart(4,'0');
+  const cc=d.slice(-2), ss=d.slice(-4,-2), mm=d.slice(0,-4);
+  return mm?`${+mm}:${ss}.${cc}`:`${+ss}.${cc}`;
 }
-function stats(p){
-  const t=p.times.map(parse);
-  const valid=t.filter(v=>v!==null), finite=valid.filter(v=>v!==Infinity);
-  const best=finite.length?Math.min(...finite):null;
-  let avg=null,drop=[];
-  if(valid.length===5){
-    const idx=[0,1,2,3,4].sort((a,b)=>t[a]-t[b]);
-    drop=[idx[0],idx[4]];
-    const mid=idx.slice(1,4).map(i=>t[i]);
-    avg=mid.includes(Infinity)?Infinity:Math.round(mid.reduce((a,b)=>a+b,0)/3);
-  }else if(valid.length>=3){
-    avg=valid.includes(Infinity)?Infinity:Math.round(valid.reduce((a,b)=>a+b,0)/valid.length);
-  }
-  return{t,best,avg,drop,n:valid.length};
-}
-const keyOf=x=>x.avg!==null?[0,x.avg,x.best??Infinity]:[1,x.best??Infinity,0];
+const normTime=v=>{const c=parse(v);return c===null?'':(c===Infinity?'DNF':fmt(c))};
+const keyOf=x=>x.t===null?[2,0]:x.t===Infinity?[1,0]:[0,x.t];
 function rankAll(){
-  const list=people.map(p=>({p,...stats(p)}));
+  const list=people.map(p=>({p,t:parse(p.time)}));
   const cmp=(a,b)=>a===b?0:a<b?-1:1;
-  list.sort((a,b)=>{const A=keyOf(a),B=keyOf(b);return cmp(A[0],B[0])||cmp(A[1],B[1])||cmp(A[2],B[2])});
+  list.sort((a,b)=>{const A=keyOf(a),B=keyOf(b);return cmp(A[0],B[0])||cmp(A[1],B[1])});
   list.forEach((x,i)=>{const pr=list[i-1];x.pos=pr&&String(keyOf(pr))===String(keyOf(x))?pr.pos:i+1});
   return list;
 }
+const ok=x=>x.t!==null&&x.t!==Infinity;
 
 /* ---- Render ---- */
 function render(){
   const all=rankAll();
   const lobs=[...new Set(people.map(p=>p.lob))].sort((a,b)=>a.localeCompare(b));
   if(filter&&!lobs.includes(filter))filter='';
-  // chips
   $('chips').innerHTML=lobs.length>1?['',...lobs].map(l=>`<button class="chip" aria-pressed="${l===filter}" data-f="${esc(l)}">${l?esc(l):'Todos'}</button>`).join(''):'';
   const shown=filter?all.filter(x=>x.p.lob===filter):all;
-  const bestSingle=Math.min(...all.map(x=>x.best??Infinity));
-  const bestAvg=Math.min(...all.filter(x=>x.avg!==null).map(x=>x.avg));
-  // podio
-  const top=all.filter(x=>(x.avg!==null?x.avg!==Infinity:x.best!==null)&&x.pos<=3);
+  const valid=all.filter(ok).map(x=>x.t);
+  const bestT=valid.length?Math.min(...valid):null;
+  const top=all.filter(x=>ok(x)&&x.pos<=3);
   $('podium').innerHTML=top.map(x=>`<div class="p g${x.pos}"><div class="n">${x.pos}</div>
     <div class="who"><b>${esc(x.p.name)}</b><div class="lob">${esc(x.p.lob)}</div></div>
-    <div class="t">${fmt(x.avg!==null?x.avg:x.best)}<small>${x.avg!==null?'Promedio':'Mejor'}</small></div></div>`).join('');
-  // tabla
+    <div class="t">${fmt(x.t)}</div></div>`).join('');
   $('rkEmpty').hidden=shown.length>0;
   $('rows').innerHTML=shown.map(x=>{
-    const cells=[0,1,2,3,4].map(i=>{
-      const d=x.drop.includes(i);const tx=fmt(x.t[i]);
-      return `<td class="r at${d?' drop':''}" data-l="${i+1}">${d?`(${tx})`:tx}</td>`;
-    }).join('');
-    const isPod=x.pos<=3&&(x.avg!==null?x.avg!==Infinity:x.best!==null);
-    return `<tr class="${isPod?'podium':''}"><td class="pos">${x.pos}</td><td class="name">${esc(x.p.name)}</td><td class="lob">${esc(x.p.lob)}</td>${cells}
-      <td class="r strong bst" data-l="Mejor">${fmt(x.best)}${x.best!==null&&x.best===bestSingle?'<span class="rec">MR</span>':''}</td>
-      <td class="r strong av" data-l="Promedio">${x.avg!==null?fmt(x.avg):'—'}${x.avg!==null&&x.avg===bestAvg&&x.avg!==Infinity?'<span class="rec">MR</span>':''}</td></tr>`;
+    const isPod=x.pos<=3&&ok(x);
+    return `<tr class="${isPod?'podium':''}"><td class="pos">${x.t===null?'—':x.pos}</td><td class="name">${esc(x.p.name)}</td><td class="lob">${esc(x.p.lob)}</td>
+      <td class="r strong">${fmt(x.t)}${ok(x)&&x.t===bestT?'<span class="rec">MR</span>':''}</td></tr>`;
   }).join('');
-  // lista de captura
   $('listEmpty').hidden=people.length>0;
-  $('list').innerHTML=people.map(p=>`<tr><td class="name">${esc(p.name)}</td><td class="lob">${esc(p.lob)}</td>
+  $('list').innerHTML=people.map(p=>`<tr><td class="name">${esc(p.name)}<div class="lob">${esc(p.time||'Sin tiempo')}</div></td><td class="lob">${esc(p.lob)}</td>
     <td class="r"><button class="btn sm" data-edit="${p.id}">Editar</button> <button class="btn sm red" data-del="${p.id}">Quitar</button></td></tr>`).join('');
-  // por LOB
-  const by={};all.forEach(x=>{if(x.avg!==null&&x.avg!==Infinity)(by[x.p.lob]??=[]).push(x.avg)});
+  const by={};all.forEach(x=>{if(ok(x))(by[x.p.lob]??=[]).push(x.t)});
   const cnt={};people.forEach(p=>cnt[p.lob]=(cnt[p.lob]||0)+1);
   const teams=lobs.map(l=>{const a=by[l]||[];return{l,n:cnt[l],mean:a.length?Math.round(a.reduce((s,v)=>s+v,0)/a.length):null,best:a.length?Math.min(...a):null}})
     .sort((a,b)=>(a.mean??Infinity)-(b.mean??Infinity));
@@ -362,12 +297,10 @@ function show(v){
 $('chips').onclick=e=>{if(e.target.dataset.f!==undefined){filter=e.target.dataset.f;render()}};
 
 /* ---- Formulario ---- */
-const att=()=>[...document.querySelectorAll('.a')];
-att().forEach((el,i,arr)=>{
-  el.addEventListener('input',()=>{el.value=maskAttempt(el.value)});
-  el.addEventListener('keydown',e=>{if(e.key==='Enter'&&i<4){e.preventDefault();arr[i+1].focus()}});
-});
-document.querySelectorAll('.dnf').forEach(b=>b.onclick=()=>{const i=att()[+b.dataset.i];i.value=i.value==='DNF'?'':'DNF'});
+const inp=$('a0');
+inp.addEventListener('input',()=>{inp.value=maskAttempt(inp.value)});
+inp.addEventListener('blur',()=>{inp.value=normTime(inp.value)});
+$('dnf').onclick=()=>{inp.value=inp.value==='DNF'?'':'DNF'};
 $('lob').onchange=()=>{const o=$('lob').value==='__other';$('otherBox').hidden=!o;$('otherLob').required=o;if(o)$('otherLob').focus()};
 function resetForm(){
   $('form').reset();$('editId').value='';$('otherBox').hidden=true;$('otherLob').required=false;
@@ -377,7 +310,7 @@ $('form').addEventListener('submit',e=>{
   e.preventDefault();
   const lob=$('lob').value==='__other'?$('otherLob').value.trim():$('lob').value;
   if(!lob)return;
-  const data={name:$('name').value.trim(),lob,times:att().map(i=>i.value.trim())};
+  const data={name:$('name').value.trim(),lob,time:normTime(inp.value)};
   const id=$('editId').value;
   const p=id?{...people.find(x=>x.id===id),...data}:{id:newId(),...data};
   savePerson(p);resetForm();
@@ -390,7 +323,7 @@ $('list').addEventListener('click',e=>{
     $('editId').value=p.id;$('name').value=p.name;
     if(STD.includes(p.lob)){$('lob').value=p.lob;$('otherBox').hidden=true;$('otherLob').required=false}
     else{$('lob').value='__other';$('otherBox').hidden=false;$('otherLob').required=true;$('otherLob').value=p.lob}
-    att().forEach((i,k)=>i.value=p.times[k]||'');
+    inp.value=p.time||'';
     $('save').textContent='Actualizar';$('cancel').hidden=false;$('name').focus();
     window.scrollTo({top:0,behavior:'smooth'});
   }
